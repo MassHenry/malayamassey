@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malaya Massey - Portfolio</title>
+    <meta name="description" content="Malaya Massey - Portrait and Family Photographer based in Rock Hill, SC. Photography rooted in connection and individuality.">
+    <title>Malaya Massey Photography</title>
     <style>
         * {
             margin: 0;
@@ -12,207 +13,170 @@
         }
 
         :root {
-            --primary-black: #1a1a1a;
-            --secondary-black: #2d2d2d;
-            --light-gray: #f5f5f5;
-            --medium-gray: #a0a0a0;
-            --white: #ffffff;
+            --cream: #FAF7F2;
+            --warm-white: #FFFCF7;
+            --warm-gray: #9B9388;
+            --dark-earth: #5C5550;
+            --soft-taupe: #D4C8BE;
+            --accent-earth: #B5A089;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--primary-black);
-            background: var(--white);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-earth);
+            background: var(--warm-white);
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 400;
+            color: var(--dark-earth);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            letter-spacing: -0.3px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-earth);
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--primary-black) 0%, var(--secondary-black) 100%);
-            color: var(--white);
-            text-align: center;
-            position: relative;
+            background: var(--cream);
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
+        .hero-image {
             position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: moveBackground 20s linear infinite;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+            /* REPLACE: Add your hero/headshot image here */
+            background: linear-gradient(135deg, var(--soft-taupe) 0%, var(--cream) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--warm-gray);
         }
 
-        @keyframes moveBackground {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            text-align: center;
             padding: 2rem;
-        }
-
-        .profile-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 5px solid var(--white);
-            margin: 0 auto 2rem;
-            object-fit: cover;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-            background: var(--medium-gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: var(--white);
-        }
-
-        .profile-photo:hover {
-            transform: scale(1.05);
+            max-width: 900px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            letter-spacing: 2px;
+            color: var(--warm-white);
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+            margin-bottom: 1.5rem;
         }
 
-        .hero .tagline {
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: var(--medium-gray);
-            margin-bottom: 2rem;
+        .hero-tagline {
+            font-size: 1.8rem;
+            color: var(--warm-white);
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 15px rgba(0,0,0,0.3);
         }
 
         .cta-button {
             display: inline-block;
             padding: 1rem 3rem;
-            background: var(--white);
-            color: var(--primary-black);
+            background: var(--warm-white);
+            color: var(--dark-earth);
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            border: 2px solid var(--warm-white);
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255,255,255,0.3);
+            background: transparent;
+            color: var(--warm-white);
+            transform: translateY(-2px);
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(26, 26, 26, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--white);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* Section Styles */
+        /* Section Spacing */
         section {
-            padding: 6rem 2rem;
-            max-width: 1200px;
+            padding: 8rem 5%;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
             text-align: center;
+            margin-bottom: 4rem;
             position: relative;
-            padding-bottom: 1rem;
         }
 
         .section-title::after {
             content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: var(--primary-black);
+            display: block;
+            width: 80px;
+            height: 2px;
+            background: var(--accent-earth);
+            margin: 1.5rem auto 0;
         }
 
         /* About Section */
-        .about-content {
+        #about {
+            background: var(--cream);
+        }
+
+        .about-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 5rem;
             align-items: center;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--secondary-black);
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
         }
 
         .about-image {
             width: 100%;
-            height: 500px;
-            background: var(--light-gray);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: 600px;
+            background: var(--soft-taupe);
+            /* REPLACE: Add your portrait image here */
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            color: var(--medium-gray);
-            text-align: center;
-            padding: 2rem;
+            color: var(--warm-gray);
+            font-size: 1.1rem;
+            overflow: hidden;
         }
 
         .about-image img {
@@ -221,372 +185,429 @@
             object-fit: cover;
         }
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
+        .about-text p:first-of-type {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
         }
 
-        .skill-tag {
-            padding: 0.5rem 1.5rem;
-            background: var(--primary-black);
-            color: var(--white);
-            border-radius: 25px;
-            font-size: 0.9rem;
+        /* Skills Section */
+        #skills {
+            background: var(--warm-white);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            background: var(--cream);
+            padding: 2.5rem 2rem;
+            text-align: center;
             transition: transform 0.3s ease;
+            border: 1px solid var(--soft-taupe);
         }
 
-        .skill-tag:hover {
-            transform: translateY(-3px);
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            font-size: 1.3rem;
+            color: var(--dark-earth);
+            margin-bottom: 1rem;
+        }
+
+        .skill-card p {
+            font-size: 1rem;
+            color: var(--warm-gray);
+            margin: 0;
         }
 
         /* Projects Section */
         #projects {
-            background: var(--light-gray);
+            background: var(--warm-white);
         }
 
-        .projects-grid {
+        .project-category {
+            margin-bottom: 6rem;
+        }
+
+        .project-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .project-header h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-header p {
+            font-size: 1.1rem;
+            color: var(--warm-gray);
+            font-style: italic;
+        }
+
+        .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
 
-        .project-card {
-            background: var(--white);
-            border-radius: 10px;
+        .project-item {
+            aspect-ratio: 4/3;
+            background: var(--cream);
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 250px;
-            background: var(--medium-gray);
+            position: relative;
+            /* REPLACE: Add project images here */
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
-            font-size: 1rem;
-            text-align: center;
-            padding: 2rem;
+            color: var(--warm-gray);
         }
 
-        .project-image img {
+        .project-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
         }
 
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-black);
-        }
-
-        .project-content p {
-            color: var(--secondary-black);
-            margin-bottom: 1.5rem;
-        }
-
-        .project-link {
-            display: inline-block;
-            color: var(--primary-black);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border-bottom: 2px solid var(--primary-black);
-        }
-
-        .project-link:hover {
-            padding-left: 10px;
+        .project-item:hover img {
+            transform: scale(1.05);
         }
 
         /* Gallery Section */
+        #gallery {
+            background: var(--cream);
+        }
+
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
             margin-top: 3rem;
         }
 
         .gallery-item {
             aspect-ratio: 1;
-            background: var(--light-gray);
-            border-radius: 10px;
+            background: var(--soft-taupe);
             overflow: hidden;
+            position: relative;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            /* REPLACE: Add gallery images here */
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--medium-gray);
-            text-align: center;
-            padding: 1rem;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
+            color: var(--warm-gray);
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: all 0.4s ease;
         }
 
-        /* Contact Section */
-        #contact {
-            background: var(--primary-black);
-            color: var(--white);
+        .gallery-item:hover img {
+            transform: scale(1.08);
+            opacity: 0.9;
         }
 
-        #contact .section-title::after {
-            background: var(--white);
-        }
-
-        .contact-content {
-            max-width: 800px;
-            margin: 0 auto;
+        /* Call to Action Section */
+        #cta {
+            background: var(--warm-white);
             text-align: center;
         }
 
-        .contact-content p {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            color: var(--medium-gray);
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-button-large {
+            display: inline-block;
+            padding: 1.2rem 3.5rem;
+            background: var(--dark-earth);
+            color: var(--warm-white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            border: 2px solid var(--dark-earth);
+        }
+
+        .cta-button-large:hover {
+            background: transparent;
+            color: var(--dark-earth);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-earth);
+            color: var(--warm-white);
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-name {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-location {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: var(--soft-taupe);
         }
 
         .social-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
+            margin-bottom: 2rem;
         }
 
         .social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: var(--white);
-            color: var(--primary-black);
+            color: var(--warm-white);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
         }
 
         .social-link:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255,255,255,0.2);
+            color: var(--accent-earth);
         }
 
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-
-        .form-group label {
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 1rem;
-            border: 2px solid var(--medium-gray);
-            border-radius: 5px;
-            font-size: 1rem;
-            font-family: inherit;
-            background: var(--white);
-            color: var(--primary-black);
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--white);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .submit-button {
-            padding: 1rem 3rem;
-            background: var(--white);
-            color: var(--primary-black);
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255,255,255,0.2);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-black);
-            color: var(--medium-gray);
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid var(--secondary-black);
+        .copyright {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--warm-gray);
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
+        @media (max-width: 1024px) {
+            section {
+                padding: 6rem 4%;
             }
 
-            .hero .tagline {
-                font-size: 1.2rem;
+            h1 {
+                font-size: 2.8rem;
             }
 
-            nav ul {
-                gap: 1.5rem;
-                flex-wrap: wrap;
-                padding: 0 1rem;
+            h2 {
+                font-size: 2rem;
             }
 
-            .about-content {
+            .about-container {
                 grid-template-columns: 1fr;
+                gap: 3rem;
             }
 
-            .projects-grid {
+            .about-image {
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 5%;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.3rem;
+            }
+
+            .project-grid {
                 grid-template-columns: 1fr;
             }
 
             .gallery-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
 
-            section {
-                padding: 4rem 1.5rem;
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
             }
 
-            .section-title {
-                font-size: 2rem;
+            p {
+                font-size: 1rem;
+            }
+
+            .cta-button,
+            .cta-button-large {
+                padding: 0.9rem 2rem;
+                font-size: 0.95rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section class="hero">
+        <div class="hero-image">
+            <!-- REPLACE: Add your hero/headshot image -->
+            <!-- <img src="hero-image.jpg" alt="Malaya Massey Photography"> -->
+            [Hero Image Placeholder - Full Width Portrait or Landscape]
+        </div>
         <div class="hero-content">
-            <div class="profile-photo">
-                <!-- REPLACE THIS: Add your profile photo -->
-                <!-- <img src="your-profile-photo.jpg" alt="Malaya Massey"> -->
-                📸
-            </div>
-            <h1>MALAYA MASSEY</h1>
-            <p class="tagline">Your Professional Tagline Here</p>
-            <a href="#contact" class="cta-button">Get In Touch</a>
+            <h1>Malaya Massey</h1>
+            <p class="hero-tagline">Photography rooted in connection and individuality</p>
+            <a href="#projects" class="cta-button">View My Work</a>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
         <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p><strong>Welcome!</strong> This is where you introduce yourself. Write about who you are, what you do, and what drives you. Share your passion, your journey, and what makes you unique.</p>
-                <p>Talk about your background, your skills, and your aspirations. This is your chance to connect with visitors on a personal level and showcase your personality.</p>
-                <div class="skills-list">
-                    <span class="skill-tag">Skill 1</span>
-                    <span class="skill-tag">Skill 2</span>
-                    <span class="skill-tag">Skill 3</span>
-                    <span class="skill-tag">Skill 4</span>
-                    <span class="skill-tag">Skill 5</span>
-                </div>
-            </div>
+        <div class="about-container">
             <div class="about-image">
-                <!-- REPLACE THIS: Add an image that represents you -->
-                <!-- <img src="your-about-image.jpg" alt="About Me"> -->
-                Replace with your photo<br>(500x500px recommended)
+                <!-- REPLACE: Add your portrait image -->
+                <!-- <img src="portrait.jpg" alt="Malaya Massey"> -->
+                [Portrait Image Placeholder]
+            </div>
+            <div class="about-text">
+                <p>Hi, I'm Malaya Massey, a portrait and family photographer based in Rock Hill, SC. However, I'm always willing to travel.</p>
+                <p>I've been photographing people for over 8 years, and what first drew me to photography — and still inspires me today — is my love for people and all the things that make us different. I'm endlessly inspired by individuality, connection, and the small details that make every person and every family unique.</p>
+                <p>My approach is modern, warm, and true to life. I focus on capturing real moments and genuine emotion — the laughter, the quiet in-between moments, and the connections that can't be forced. I believe the best photos happen when you feel comfortable being yourself.</p>
+                <p>Moments pass quickly, but photographs let us hold onto them a little longer. My goal is to capture images that feel honest, personal, and timeless — images that reflect you, just as you are.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">What I Bring</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Natural & Studio Lighting</h3>
+                <p>Expert control of light to create mood and depth</p>
+            </div>
+            <div class="skill-card">
+                <h3>Visual Storytelling</h3>
+                <p>Composition that captures emotion and narrative</p>
+            </div>
+            <div class="skill-card">
+                <h3>Client Consultation</h3>
+                <p>Relationship management from vision to final delivery</p>
+            </div>
+            <div class="skill-card">
+                <h3>Creating Comfort</h3>
+                <p>Making you feel at home in front of the camera</p>
+            </div>
+            <div class="skill-card">
+                <h3>Clear Communication</h3>
+                <p>Setting expectations and delivering on promises</p>
+            </div>
+            <div class="skill-card">
+                <h3>Adaptability</h3>
+                <p>Thriving in dynamic and changing environments</p>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
-        <h2 class="section-title">Projects & Work</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-image">
-                    <!-- REPLACE THIS: Add project image -->
-                    <!-- <img src="project1.jpg" alt="Project 1"> -->
-                    Project Image 1<br>(350x250px)
+        <h2 class="section-title">Projects</h2>
+
+        <!-- School / Graduation -->
+        <div class="project-category">
+            <div class="project-header">
+                <h3>School & Graduation</h3>
+                <p>Celebrating milestones and new beginnings</p>
+            </div>
+            <div class="project-grid">
+                <div class="project-item">
+                    <!-- REPLACE: Add graduation photo 1 -->
+                    <!-- <img src="graduation-1.jpg" alt="Graduation Portrait"> -->
+                    [Graduation Image 1]
                 </div>
-                <div class="project-content">
-                    <h3>Project Title 1</h3>
-                    <p>Describe this project. What did you create? What problem did it solve? What technologies or skills did you use?</p>
-                    <a href="#" class="project-link">View Project →</a>
+                <div class="project-item">
+                    <!-- REPLACE: Add graduation photo 2 -->
+                    [Graduation Image 2]
+                </div>
+                <div class="project-item">
+                    <!-- REPLACE: Add graduation photo 3 -->
+                    [Graduation Image 3]
                 </div>
             </div>
+        </div>
 
-            <div class="project-card">
-                <div class="project-image">
-                    <!-- REPLACE THIS: Add project image -->
-                    Project Image 2<br>(350x250px)
+        <!-- Sports -->
+        <div class="project-category">
+            <div class="project-header">
+                <h3>Sports</h3>
+                <p>Capturing action, energy, and athletic spirit</p>
+            </div>
+            <div class="project-grid">
+                <div class="project-item">
+                    <!-- REPLACE: Add sports photo 1 -->
+                    [Sports Image 1]
                 </div>
-                <div class="project-content">
-                    <h3>Project Title 2</h3>
-                    <p>Another amazing project you've worked on. Highlight the impact and your role in bringing it to life.</p>
-                    <a href="#" class="project-link">View Project →</a>
+                <div class="project-item">
+                    <!-- REPLACE: Add sports photo 2 -->
+                    [Sports Image 2]
+                </div>
+                <div class="project-item">
+                    <!-- REPLACE: Add sports photo 3 -->
+                    [Sports Image 3]
                 </div>
             </div>
+        </div>
 
-            <div class="project-card">
-                <div class="project-image">
-                    <!-- REPLACE THIS: Add project image -->
-                    Project Image 3<br>(350x250px)
+        <!-- Personal / Couple Portraits -->
+        <div class="project-category">
+            <div class="project-header">
+                <h3>Personal & Couple Portraits</h3>
+                <p>Intimate moments that tell your story</p>
+            </div>
+            <div class="project-grid">
+                <div class="project-item">
+                    <!-- REPLACE: Add portrait photo 1 -->
+                    [Portrait Image 1]
                 </div>
-                <div class="project-content">
-                    <h3>Project Title 3</h3>
-                    <p>Showcase your best work here. Let potential collaborators see what you're capable of creating.</p>
-                    <a href="#" class="project-link">View Project →</a>
+                <div class="project-item">
+                    <!-- REPLACE: Add portrait photo 2 -->
+                    [Portrait Image 2]
+                </div>
+                <div class="project-item">
+                    <!-- REPLACE: Add portrait photo 3 -->
+                    [Portrait Image 3]
                 </div>
             </div>
         </div>
@@ -596,78 +617,52 @@
     <section id="gallery">
         <h2 class="section-title">Gallery</h2>
         <div class="gallery-grid">
+            <!-- REPLACE: Add your best gallery images -->
             <div class="gallery-item">
-                <!-- REPLACE THIS: Add gallery images -->
-                <!-- <img src="gallery1.jpg" alt="Gallery 1"> -->
-                Image 1
+                <!-- <img src="gallery-1.jpg" alt="Gallery Image 1"> -->
+                [Gallery 1]
             </div>
-            <div class="gallery-item">
-                Image 2
-            </div>
-            <div class="gallery-item">
-                Image 3
-            </div>
-            <div class="gallery-item">
-                Image 4
-            </div>
-            <div class="gallery-item">
-                Image 5
-            </div>
-            <div class="gallery-item">
-                Image 6
-            </div>
-            <div class="gallery-item">
-                Image 7
-            </div>
-            <div class="gallery-item">
-                Image 8
-            </div>
+            <div class="gallery-item">[Gallery 2]</div>
+            <div class="gallery-item">[Gallery 3]</div>
+            <div class="gallery-item">[Gallery 4]</div>
+            <div class="gallery-item">[Gallery 5]</div>
+            <div class="gallery-item">[Gallery 6]</div>
+            <div class="gallery-item">[Gallery 7]</div>
+            <div class="gallery-item">[Gallery 8]</div>
+            <div class="gallery-item">[Gallery 9]</div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2 class="section-title">Let's Connect</h2>
-        <div class="contact-content">
-            <p>I'd love to hear from you! Whether you have a question, want to collaborate, or just want to say hello.</p>
-            
-            <div class="social-links">
-                <a href="https://www.facebook.com/LouisTomlinsomFutureWife" target="_blank" class="social-link">
-                    📘 Facebook
-                </a>
-                <a href="https://www.instagram.com/malaya_inez/" target="_blank" class="social-link">
-                    📷 Instagram
-                </a>
-                <a href="mailto:your.email@example.com" class="social-link">
-                    ✉️ Email
-                </a>
-            </div>
-
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="submit-button">Send Message</button>
-            </form>
+    <!-- Call to Action Section -->
+    <section id="cta">
+        <div class="cta-content">
+            <h2>Let's Create Something Beautiful</h2>
+            <p>Whether you're celebrating a milestone, capturing your family, or simply want portraits that feel like you — I'd love to work together. Reach out and let's start planning your session.</p>
+            <a href="mailto:your.email@example.com" class="cta-button-large">Book a Session</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Malaya Massey. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-name">Malaya Massey</div>
+            <div class="footer-location">Rock Hill, SC • Travel Available</div>
+            
+            <div class="social-links">
+                <!-- REPLACE: Add your social media links -->
+                <a href="https://www.facebook.com/LouisTomlinsomFutureWife" target="_blank" class="social-link" aria-label="Facebook">📘</a>
+                <a href="https://www.instagram.com/malaya_inez/" target="_blank" class="social-link" aria-label="Instagram">📷</a>
+                <a href="mailto:your.email@example.com" class="social-link" aria-label="Email">✉️</a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 Malaya Massey Photography. All rights reserved.
+            </div>
+        </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -679,13 +674,6 @@
                     });
                 }
             });
-        });
-
-        // Form submission handler (customize this for your email service)
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! (Configure form submission with your preferred service)');
-            this.reset();
         });
     </script>
 </body>
