@@ -1,0 +1,31 @@
+# robots.txt for Malaya Massey Photography
+
+User-agent: *
+Allow: /
+Disallow: /cgi-bin/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.pdf$
+
+# Sitemap location
+Sitemap: https://malayamassey.com/sitemap.xml
+
+# Crawl delay (optional - prevents aggressive crawling)
+Crawl-delay: 10
+
+# Allow Google Image Bot
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

@@ -1,0 +1,16 @@
+# humanstxt.org
+
+/* TEAM */
+Photographer: Malaya Massey
+Site: https://malayamassey.com
+Location: Rock Hill, South Carolina
+Email: mmasseymedia@gmail.com
+
+/* SITE */
+Last update: 2025/02/07
+Standards: HTML5, CSS3
+Components: Responsive Design, Modern Animations
+Software: Custom HTML/CSS/JavaScript
+
+/* THANKS */
+To all the families and individuals who trust me to capture their moments.

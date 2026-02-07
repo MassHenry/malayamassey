@@ -1,0 +1,12 @@
+# security.txt for Malaya Massey Photography
+# More info: https://securitytxt.org/
+
+Contact: mailto:mmasseymedia@gmail.com
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://malayamassey.com/.well-known/security.txt
+
+# Optional fields:
+# Acknowledgments: https://malayamassey.com/security-acknowledgments
+# Policy: https://malayamassey.com/security-policy
+# Hiring: https://malayamassey.com/jobs
